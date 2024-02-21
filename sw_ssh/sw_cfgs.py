@@ -1,4 +1,4 @@
-#Cfgs that are to be applied to every switch
+#Configs that are to be applied to every switch
 basic_cfg = [
     'banner motd $This is a virtual switch used for testing$', 
     'ip default-gateway 192.168.1.17', 
@@ -8,7 +8,7 @@ basic_cfg = [
     'name Guest',
 ]
 
-#Cfgs applied to switches individually
+#Configs applied to switches individually
 sw_a1_cfg = [
     'int g3/2',
     'switchport mod acc',
