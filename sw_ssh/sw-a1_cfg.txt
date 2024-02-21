@@ -1,6 +1,0 @@
-int g3/2
-switchport mod acc 
-switchport acc vlan 20 
-int g0/2 
-switchport mod acc
-switchport acc vlan 30 
