@@ -1,6 +1,8 @@
 import os
 from my_switches.py import switches
-#This script allows me to ping all switches in my topology in 1 command
+
+#ABOUT
+#Allows pinging of all switches & logs results
 
 os.system('echo "This is a log for ICMP requests" > sw_ping_log.txt')
 for sw in switches:

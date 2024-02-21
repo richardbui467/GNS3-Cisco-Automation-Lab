@@ -1,4 +1,4 @@
-#Device info & creds for switches
+#Device info & creds for switches to pass into Netmiko 
 sw_a1 = {
     'device_type': 'cisco_ios',
     'ip': '192.168.1.2',

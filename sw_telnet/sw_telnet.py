@@ -1,6 +1,9 @@
 import telnetlib
 import getpass
 
+#ABOUT
+#Configures switches remotely via Telnet 
+
 user = input("Enter telnet username: ")
 pw = getpass.getpass()
 
