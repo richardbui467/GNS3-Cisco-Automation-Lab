@@ -1,0 +1,7 @@
+config t
+banner motd $This is a virtual switch used for testing$ 
+ip default-gateway 192.168.1.17 
+vlan 20
+name Private
+vlan 30
+name Guest

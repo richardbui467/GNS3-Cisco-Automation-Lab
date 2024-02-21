@@ -1,0 +1,4 @@
+en
+cisco
+conf t
+banner motd !This is a virtual switch used for testing by Richard Bui!
