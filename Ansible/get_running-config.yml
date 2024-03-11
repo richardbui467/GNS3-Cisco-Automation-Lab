@@ -1,9 +1,0 @@
----
-- name: Get running-config
-  hosts: switches
-  gather facts: false
-
-  tasks:
-    - name: show running-config
-      ios_config:
-        running_config 
