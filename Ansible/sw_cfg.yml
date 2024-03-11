@@ -1,0 +1,54 @@
+---
+- name: Configure SW-A1 
+  hosts: sw-a1
+  gather_facts: false
+
+  tasks: 
+    - name: Changing Hostname  
+      cisco.ios.ios_hostname: 
+        config: 
+          hostname: SW-A1 
+    
+    - name: Configuring Banner MOTD 
+      cisco.ios.ios_banner:
+        banner: login
+        text: This is a switch for testing within Automation-Kitchen
+    
+    - name: Configuring Service Password-Encryption
+      cisco.ios.ios_service:
+        config:
+          password_encryption:
+            true
+
+    - name: Configuring Access & Trunk Interfaces
+      cisco.ios.ios_l2_interfaces:
+        config: 
+          - name: GigabitEthernet3/2
+            mode:
+              access
+            access:
+              vlan: 20
+        
+          - name: GigabitEthernet0/2
+            mode:
+              access
+            access:
+              vlan: 30 
+        
+          - name: GigabitEthernet1/1
+            mode:
+              trunk
+            trunk:
+              allowed_vlans: 20,30
+              encapsulation: dot1q
+
+    - name: Configuring VLANs 20 & 30
+      cisco.ios.ios_vlans:
+        config:
+          - name: Private LAN
+            shutdown: enabled
+            vlan_id: 20 
+
+          - name: Guest LAN
+            shutdown: enabled
+            vlan_id: 30 

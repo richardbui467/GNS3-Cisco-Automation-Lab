@@ -1,0 +1,9 @@
+---
+- name: Get running-config
+  hosts: switches
+  gather_facts: false
+  
+  tasks:
+    - name: Get running-config
+      cisco.ios.ios_command:
+        commands: show run
